@@ -9,6 +9,6 @@ handlers:
 libraries:
 - name: webapp2
   version: latest
-- name: jinja2g
+- name: jinja2
   version: latest
 
