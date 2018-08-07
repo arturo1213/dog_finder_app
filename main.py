@@ -15,16 +15,16 @@ the_jinja_env = jinja2.Environment(
     
     
 
-class IndexPage(webapp2.RequestHandler):
+class mainPage(webapp2.RequestHandler):
     def get(self):
         about_template = the_jinja_env.get_template('templates/index.html')
         self.response.write(about_template.render())
     def post(self):
-         self.response.write("recieved a post request")   
+        self.response.write("recieved a post request")   
         
 
 app = webapp2.WSGIApplication([
-    ('/', IndexPage),
+    ('/', mainPage),
 ], debug=True)
 
      
