@@ -2,8 +2,6 @@ import webapp2
 import jinja2
 import os
 
-
-#libraries for APIs
 from google.appengine.api import urlfetch
 import json
 
