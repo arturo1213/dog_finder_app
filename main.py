@@ -27,7 +27,7 @@ class infoPage(webapp2.RequestHandler):
         self.response.write(about_template.render())
     
 class ResultsPage(webapp2.RequestHandler):
-    def post(self):
+    def get(self):
         self.response.write("recieved a post request")
 
 
