@@ -4,32 +4,36 @@
 <html>
     <head>
         <title>Dog Adoption App</title>
+        <link rel="stylesheet" type="text/css" href="css/styleindex.css">
     </head>
 
+   
     <body>
-        <h1>Adopt-a-dog</h1>
-        <h2>Find the perfect dog for you!</h2>
-        <form method=POST action="/results">
+        <h1>Adopt-a-dog Questions</h1>
+        <form method=POST action="/">
             <h3>What size?</h3>
-                <input type="radio" name="size" value="correct">Small</input>
-                <input type="radio" name="size" value="correct">Medium</input>
-                <input type="radio" name="selected-answer" value="correct">Large</input><br>
+                <input type="radio" name="size" value="small">Small</input>
+                <input type="radio" name="size" value="medium">Medium</input>
+                <input type="radio" name="size" value="large">Large</input> <br>
             <h3>Price Range</h3>
-                <input type="radio" name="price" value="correct">up to $100</input>
-                <input type="radio" name="price" value="correct">$101-$250</input>
-                <input type="radio" name="price" value="correct">$251 and above</input> <br>
+                <input type="radio" name="price" value="lowest">up to $100</input>
+                <input type="radio" name="price" value="middle">$101-$250</input>
+                <input type="radio" name="price" value="highest">$251 and above</input> <br>
             <h3>Gender</h3>
-                <input type="radio" name="gender" value="correct">Male</input>
-                <input type="radio" name="gender" value="correct">Female</input> <br>
+                <input type="radio" name="gender" value="male">Male</input>
+                <input type="radio" name="gender" value="female">Female</input>
+                <input type="radio" name="gender" value="either">Either</input> <br>
             <h3>Age of dog</h3>
-                <input type="radio" name="age" value="correct">up to 9 months</input>
-                <input type="radio" name="age" value="correct">1yr.-3yrs.</input>
-                <input type="radio" name="age" value="correct">4yrs-6yrs.</input>
-                <input type="radio" name="age" value="correct">7yrs.-9yrs.</input>
-                <input type="radio" name="age" value="correct">10yrs.</input> <br>
+                <input type="radio" name="age" value="months">up to 9 months</input>
+                <input type="radio" name="age" value="young">1yr.-3yrs.</input>
+                <input type="radio" name="age" value="middle">4yrs-6yrs.</input>
+                <input type="radio" name="age" value="older">7yrs.-9yrs.</input>
+                <input type="radio" name="age" value="old">10yrs.</input> <br>
+            <h3>Location</h3>
+                <input type="radio" name="location" value="Salinas">Salinas</input>
+                <input type="radio" name="location" value="Monterey">Monterey</input> <br>
+
             <input type="submit">
         </form>
     </body>
-        
-
 </html>

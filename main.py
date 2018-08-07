@@ -37,5 +37,3 @@ app = webapp2.WSGIApplication([
     ('/results',ResultsPage),
 ], debug=True)
 
-     
-        
