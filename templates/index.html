@@ -1,17 +1,32 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <h1>Adopt-a-dog</h1>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>Dog Adoption App</title>
     </head>
-
-
+    
     <body>
-        <h2>Find the perfect dog for you!</h2>
+        <h1>Adopt-a-dog Questions</h1>
         <form method=POST action="/">
-        
-        <input type="Submit">
-    </form>
+            <h3>What size?</h3>
+                <input type="radio" name="selected-answer" value="small">Small</input>
+                <input type="radio" name="selected-answer" value="medium">Medium</input>
+                <input type="radio" name="selected-answer" value="large">Large</input> <br>
+            <h3>Price Range</h3>
+                <input type="radio" name="selected-answer" value="100">up to $100</input>
+                <input type="radio" name="selected-answer" value="250">$101-$250</input>
+                <input type="radio" name="selected-answer" value="251">$251 and above</input> <br>
+            <h3>Gender</h3>
+                <input type="radio" name="selected-answer" value="male">Male</input>
+                <input type="radio" name="selected-answer" value="female">Female</input>
+                <input type="radio" name="selected-answer" value="either">Either</input> <br>
+            <h3>Age of dog</h3>
+                <input type="radio" name="selected-answer" value="months">up to 9 months</input>
+                <input type="radio" name="selected-answer" value="1-3">1yr.-3yrs.</input>
+                <input type="radio" name="selected-answer" value="4-6">4yrs-6yrs.</input>
+                <input type="radio" name="selected-answer" value="7-9">7yrs.-9yrs.</input>
+                <input type="radio" name="selected-answer" value="10">10yrs.</input> <br>
+            <input type="submit">
+        </form>
     </body>
-        
-
 </html>
