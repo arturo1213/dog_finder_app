@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<<<<<<< HEAD
+    <head>
+       <style>
+      .dog-div{
+      width: 450px;
+      height: 450px;
+      background-size: cover;
+      text-align: center;
+      position: relative;
+      }
+      h2 {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 15px 0;
+        padding: 0 5px;
+        font-family: impact;
+        color: white;
+        text-shadow: 1px 1px black;
+      }
+    </style>   
+    </head>
+    <body>
+         {% for dog in data%}
+        
+        <div class="dog-div" style="background-image:url('{{dog['media']['photos']['photo'][0]['$t']}}');">
+         </div>
+             
+         {%endfor%}
+    </body>
+</html>
+
