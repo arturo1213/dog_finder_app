@@ -10,7 +10,4 @@ libraries:
 - name: webapp2
   version: latest
 - name: jinja2
-<<<<<<< HEAD
-  version: latest
-=======
   version: latest
