@@ -30,7 +30,7 @@ class mainPage(webapp2.RequestHandler):
         size = self.request.get('size')
         
         
-         self.response.write(origin)
+        self.response.write(origin)
         
 '''
 class mainPage(webapp2.RequestHandler):
