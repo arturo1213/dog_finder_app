@@ -37,7 +37,7 @@ class infoPage(webapp2.RequestHandler):
         
 
 class questionPage(webapp2.RequestHandler):
-    def get(self):
+    def post(self):
 
         print "====InfoPage (get)===="
         info_template = the_jinja_env.get_template('templates/index.html')
