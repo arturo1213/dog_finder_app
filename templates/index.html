@@ -4,20 +4,22 @@
 <html>
     <head>
         <title>Dog Adoption App</title>
-        <link rel="stylesheet" type="text/css" href="styles.css">
         <style>
             body{
                 background-color: lightyellow;
                 font-size:20px;
                 text-align: center;
+            }
+            h8{
+                font-size:15px;
                 padding: 10px 4px;
-                margin-bottom: 0;
-                margin-top: 0;
+                margin-bottom: 30px;
+                margin-top: 30px;
             }
             h3{
                 font-size:20px;
                 margin-bottom: 0;
-                margin-top: 0;
+                margin-top: 50px;
             }
             h4{
                 font-size:20px;
@@ -48,26 +50,38 @@
                 margin-top: 0;
             }
             .size{
+                font-size:10px;
                 padding: 10px 4px;
                 margin-bottom: 35px;
                 margin-left: 30px;
             }
             .range{
+                font-size:10px;
                 padding: 10px 4px;
                 margin-bottom: 35px;
                 margin-left: 30px;
             }
             .gender{
+                font-size:10px;
                 padding: 10px 4px;
                 margin-bottom: 35px;
                 margin-left: 30px;
             }
             .age{
+                font-size:10px;
                 padding: 10px 4px;
                 margin-bottom: 35px;
                 margin-left: 30px;
             }
             .area{
+                font-size:10px;
+                padding: 10px 4px;
+                margin-bottom: 35px;
+                margin-left: 30px;
+                margin-top: 30px;
+            }
+            .breed{
+                font-size:10px;
                 padding: 10px 4px;
                 margin-bottom: 35px;
                 margin-left: 30px;
@@ -79,28 +93,26 @@
 
     <body>
         <h1>Adopt-A-Dog Questions</h1>
+        <h8>(MUST PICK ONE FOR EACH QUESTION)</h8>
         <form method=POST action="/">
             <h3><b>What size?</b></h3><br>
                 <input class="size" type="radio" name="size" value="small">Small</input>
                 <input class="size" type="radio" name="size" value="medium">Medium</input>
                 <input class="size" type="radio" name="size" value="large">Large</input>
-            <h4><b>What is your price range?</b></h4><br>
-                <input class="range" type="radio" name="price" value="lowest">up to $100</input>
-                <input class="range" type="radio" name="price" value="middle">$101-$250</input>
-                <input class="range" type="radio" name="price" value="highest">$251 and above</input> <br>
             <h5><b>Preferred gender?</b></h5><br>
                 <input class="gender" type="radio" name="gender" value="male">Male</input>
-                <input class="gender" type="radio" name="gender" value="female">Female</input>
-                <input class="gender" type="radio" name="gender" value="either">Either</input> <br>
+                <input class="gender" type="radio" name="gender" value="female">Female</input><br>
             <h6><b>Age of dog</b></h6><br>
-                <input class="age" type="radio" name="age" value="months">up to 9 months</input>
-                <input class="age" type="radio" name="age" value="young">1yr.-3yrs.</input>
-                <input class="age" type="radio" name="age" value="middle">4yrs-6yrs.</input>
-                <input class="age" type="radio" name="age" value="older">7yrs.-9yrs.</input>
-                <input class="age" type="radio" name="age" value="old">10yrs.</input> <br>
+                <input class="age" type="radio" name="age" value="months">up to 1 year</input>
+                <input class="age" type="radio" name="age" value="young">2yr.-5yrs.</input>
+                <input class="age" type="radio" name="age" value="middle">6yrs-9yrs.</input>
+                <input class="age" type="radio" name="age" value="old">10yrs. and up</input> <br>
             <h7><b>Location</b></h7><br>
-                <input class="area"type="radio" name="location" value="Salinas">Salinas</input>
-                <input class="area"type="radio" name="location" value="Monterey">Monterey</input> <br>
+                <input class="area" type="radio" name="location" value="Salinas">Salinas</input>
+                <input class="area" type="radio" name="location" value="Monterey">Monterey</input> <br>
+            <h9><b>Purebred or Mixed</b></h9><br>
+                <input class="breed" type="radio" name="breed" value="Pure">Purebred</input>
+                <input class="breed" type="radio" name="breed" value="Mixed">Mixed</input> <br>
             <input type="submit">
         </form>
     </body>

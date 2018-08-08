@@ -28,6 +28,7 @@ class infoPage(webapp2.RequestHandler):
     
 class ResultsPage(webapp2.RequestHandler):
     def get(self):
+        about_template = the_jinja_env.get_template('templates/info.html')
         self.response.write("recieved a post request")
 
 
