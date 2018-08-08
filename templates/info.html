@@ -23,10 +23,15 @@
     </head>
     <body>
          {% for dog in data%}
+
+        {%if "photos" in dog ["media"] %}
+            <div class="dog-div" style="background-image:url('{{dog['media']['photos']['photo'][0]['$t']}}');">
+        {% else %}
+       <div class="dog-div" style=background-image:url ("https://www.jainsusa.com/images/store/landscape/not-available.jpg");>
+    
+        {% endif %}
         
-        <div class="dog-div" style="background-image:url('{{dog['media']['photos']['photo'][0]['$t']}}');">
          </div>
-             
          {%endfor%}
     </body>
 </html>
