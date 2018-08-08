@@ -13,7 +13,6 @@ the_jinja_env = jinja2.Environment(
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
-
 class mainPage(webapp2.RequestHandler):
     def get(self):
         about_template = the_jinja_env.get_template('templates/welcome.html')
