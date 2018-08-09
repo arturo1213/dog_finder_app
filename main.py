@@ -18,7 +18,11 @@ class mainPage(webapp2.RequestHandler):
         about_template = the_jinja_env.get_template('templates/welcome.html')
         self.response.write(about_template.render())
 
-
+class questionPage(webapp2.RequestHandler):
+    def get(self):
+        print "====InfoPage(get)===="
+        index_template = the_jinja_env.get_template('templates/index.html')
+        self.response.write(index_template.render())
 
 class infoPage(webapp2.RequestHandler):
     def get(self):
@@ -33,18 +37,11 @@ class infoPage(webapp2.RequestHandler):
         self.response.write("recieved a post request")
         dict={"data":first_result}
         self.response.write(info_template.render(dict))
-        
 
-class questionPage(webapp2.RequestHandler):
-    def post(self):
-
-        print "====InfoPage (get)===="
-        info_template = the_jinja_env.get_template('templates/index.html')
-        self.response.write(info_template.render())
         
 app = webapp2.WSGIApplication([
     ('/', mainPage),
-    ("/info", infoPage),
     ("/question",questionPage),
+    ("/info", infoPage),
 ], debug=True)
 
