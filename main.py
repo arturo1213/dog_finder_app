@@ -28,11 +28,12 @@ class infoPage(webapp2.RequestHandler):
     def post(self):
         print "====InfoPage (get)===="
         info_template = the_jinja_env.get_template('templates/info.html')
+        self.response.write(info_template.render())
        
-    
         question_endpoint_url="http://api.petfinder.com/pet.find?key=24dd34741399125dc8f5c2052ecfd2dc&animal=dog&location=93905&format=json"
         question_response=urlfetch.fetch(question_endpoint_url).content
         question_as_json=json.loads(question_response)
+
         list_of_pets=question_as_json['petfinder']['pets']['pet']
         self.response.write("recieved a post request")
         #dict={"data":first_result}
@@ -62,7 +63,6 @@ class infoPage(webapp2.RequestHandler):
 
                 
                         
-            
         
         
         self.response.write(info_template.render(myDict))
@@ -70,7 +70,7 @@ class infoPage(webapp2.RequestHandler):
 
 app = webapp2.WSGIApplication([
     ('/', mainPage),
-    ("/info", infoPage),
     ("/question",questionPage),
+    ("/info", infoPage),
 ], debug=True)
 
