@@ -34,7 +34,7 @@ class infoPage(webapp2.RequestHandler):
         question_response=urlfetch.fetch(question_endpoint_url).content
         question_as_json=json.loads(question_response)
         first_result=question_as_json['petfinder']['pets']['pet']
-        self.response.write("recieved a post request")
+        #self.response.write("recieved a post request")
         dict={"data":first_result}
         self.response.write(info_template.render(dict))
 

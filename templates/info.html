@@ -2,37 +2,18 @@
 <html>
     <head>
         <title>Dog Adoption App</title>
-        <style>
-            .dog-div{
-            width: 450px;
-            height: 450px;
-            background-size: cover;
-            text-align: center;
-            position: relative;
-          }
-            h2 {
-                position: absolute;
-                left: 0;
-                right: 0;
-                margin: 15px 0;
-                padding: 0 5px;
-                font-family: impact;
-                color: white;
-                text-shadow: 1px 1px black;
-            }
-        </style>   
+ 
     </head>
     <body>
          {% for dog in data%}
 
-        {%if "photos" in dog ["media"] %}
-            <div class="dog-div" style="background-image:url('{{dog['media']['photos']['photo'][0]['$t']}}');">
-        {% else %}
-       <div class="dog-div" style=background-image:url ("https://www.jainsusa.com/images/store/landscape/not-available.jpg");>
-    
-        {% endif %}
-        
-         </div>
+            {%if "photos" in dog ["media"] %}
+                <img height=300 width=350 src={{dog['media']['photos']['photo'][2]['$t']}}><br>
+            {% else %}
+               <img src="https://polki.pl/foto/4_3_LARGE/atak-drgawek-padaczka-czy-zapalenie-mozgu-1648862.jpg">
+            {% endif %}
+            
+             </div>
          {%endfor%}
     </body>
 </html>
