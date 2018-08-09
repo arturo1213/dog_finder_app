@@ -30,7 +30,6 @@ class infoPage(webapp2.RequestHandler):
         info_template = the_jinja_env.get_template('templates/info.html')
         self.response.write(info_template.render())
        
-    
         question_endpoint_url="http://api.petfinder.com/pet.find?key=24dd34741399125dc8f5c2052ecfd2dc&animal=dog&location=93905&format=json"
         question_response=urlfetch.fetch(question_endpoint_url).content
         question_as_json=json.loads(question_response)
