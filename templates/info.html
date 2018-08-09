@@ -1,33 +1,38 @@
 <!DOCTYPE html>
 <html>
     <head>
-       <style>
-      .dog-div{
-      width: 50px;
-      height: 50px;
-      background-size: cover;
-      text-align: center;
-      position: relative;
-      padding: 100px;
-      }
-      h2 {
-        position: absolute;
-        left: 0;
-        right: 0;
-        margin: 50px 0;
-        padding:  10px;
-        font-family: impact;
-        color: white;
-        text-shadow: 1px 1px black;
-      }
-    </style>   
+        <title>Dog Adoption App</title>
+        <style>
+            .dog-div{
+            width: 450px;
+            height: 450px;
+            background-size: cover;
+            text-align: center;
+            position: relative;
+          }
+            h2 {
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin: 15px 0;
+                padding: 0 5px;
+                font-family: impact;
+                color: white;
+                text-shadow: 1px 1px black;
+            }
+        </style>   
     </head>
     <body>
          {% for dog in data%}
+
+        {%if "photos" in dog ["media"] %}
+            <div class="dog-div" style="background-image:url('{{dog['media']['photos']['photo'][0]['$t']}}');">
+        {% else %}
+       <div class="dog-div" style=background-image:url ("https://www.jainsusa.com/images/store/landscape/not-available.jpg");>
+    
+        {% endif %}
         
-        <div class="dog-div" style="background-image:url('{{dog['media']['photos']['photo'][0]['$t']}}');">
          </div>
-             
          {%endfor%}
     </body>
 </html>
