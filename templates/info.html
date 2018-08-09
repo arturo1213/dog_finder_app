@@ -22,6 +22,9 @@
     </style>   
     </head>
     <body>
+        <script>
+            console.log({{key}})
+        </script>
          {% for dog in data%}
 
         {%if "photos" in dog ["media"] %}
@@ -30,9 +33,14 @@
        <div class="dog-div" style=background-image:url ("https://www.jainsusa.com/images/store/landscape/not-available.jpg");>
     
         {% endif %}
-        
          </div>
          {%endfor%}
+         <div>
+           size: {{size}} 
+           gender: {{gender}}
+           location:{{location}}
+           age:{{age}}
+         </div>
     </body>
 </html>
 
