@@ -25,9 +25,10 @@ class questionPage(webapp2.RequestHandler):
         self.response.write(index_template.render())
 
 class infoPage(webapp2.RequestHandler):
-    def get(self):
+    def post(self):
         print "====InfoPage (get)===="
         info_template = the_jinja_env.get_template('templates/info.html')
+        self.response.write(info_template.render())
        
     
         question_endpoint_url="http://api.petfinder.com/pet.find?key=24dd34741399125dc8f5c2052ecfd2dc&animal=dog&location=93905&format=json"
