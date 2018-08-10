@@ -2,9 +2,11 @@
 <html>
     <head>
         <title>Dog Adoption App</title>
- 
     </head>
     <body>
+        <script>
+            console.log({{key}})
+        </script>
          {% for dog in data%}
 
             {%if "photos" in dog ["media"] %}
@@ -14,7 +16,14 @@
             {% endif %}
             
              </div>
+
          {%endfor%}
+         <div>
+           size: {{size}} 
+           gender: {{gender}}
+           location:{{location}}
+           age:{{age}}
+         </div>
     </body>
 </html>
 
