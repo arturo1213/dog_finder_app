@@ -30,14 +30,29 @@ class infoPage(webapp2.RequestHandler):
         info_template = the_jinja_env.get_template('templates/info.html')
         self.response.write(info_template.render())
        
-        question_endpoint_url="http://api.petfinder.com/pet.find?key=24dd34741399125dc8f5c2052ecfd2dc&animal=dog&location=93905&format=json"
-        question_response=urlfetch.fetch(question_endpoint_url).content
-        question_as_json=json.loads(question_response)
+        question_endpoint_url_sal="http://api.petfinder.com/pet.find?key=24dd34741399125dc8f5c2052ecfd2dc&animal=dog&location=93905&format=json"
+        question_response_sal=urlfetch.fetch(question_endpoint_url_sal).content
+        question_as_json_sal=json.loads(question_response_sal)
+        
+        question_endpoint_url_mon="http://api.petfinder.com/pet.find?key=24dd34741399125dc8f5c2052ecfd2dc&animal=dog&location=93940&format=json"
+        question_response_mon=urlfetch.fetch(question_endpoint_url_mon).content
+        question_as_json_mon=json.loads(question_response_mon)
 
-        list_of_pets=question_as_json['petfinder']['pets']['pet']
-        self.response.write("recieved a post request")
-        #dict={"data":first_result}
 
+        list_of_pets_sal=question_as_json_sal['petfinder']['pets']['pet']
+        list_of_pets_mon=question_as_json_mon['petfinder']['pets']['pet']
+        
+        #print "+++++++++++++++++++++++"
+       # print len(list_of_pets_sal)
+        list_of_pets_sal.extend(list_of_pets_mon)
+       # print len(list_of_pets_sal)
+        #print type(list_of_pets_sal)
+        list_of_pets = list_of_pets_sal
+        #self.response.write("recieved a post request")
+        
+        #print type(list_of_pets_sal)
+        #print type(list_of_pets_mon)
+        print"**********"
         
         size = self.request.get('size')
         gender = self.request.get('gender')
@@ -54,18 +69,16 @@ class infoPage(webapp2.RequestHandler):
         for pet in list_of_pets:
             if pet['age']['$t']== age and pet['size']['$t']==size and pet['contact']['city']['$t']==location and pet['sex']['$t']==gender:
                 best_matches.append(pet)
-            
                 
-               
-                
-        print(best_matches)
-        print question_as_json['petfinder']['pets']['pet'][0]
+        #self.response.write(best_matches)
+        #self.response.write(len(best_matches))
+        #print question_as_json['petfinder']['pets']['pet'][0]
+
 
                 
-                        
+        dict={'data': best_matches}
         
-        
-        self.response.write(info_template.render(myDict))
+        self.response.write(info_template.render(dict))
 
 
 app = webapp2.WSGIApplication([

@@ -2,28 +2,25 @@
 <html>
     <head>
         <title>Dog Adoption App</title>
+
     </head>
     <body>
-        <script>
-            console.log({{key}})
-        </script>
-         {% for dog in data%}
-
-            {%if "photos" in dog ["media"] %}
-                <img height=300 width=350 src={{dog['media']['photos']['photo'][2]['$t']}}><br>
+        <br>
+        <br>
+         {% for pet in data %}
+            {%if "photos" in pet["media"] %}
+                <img height=300 width=350 src= {{ pet['media']['photos']['photo'][2]['$t']}}><br>
             {% else %}
-               <img src="https://polki.pl/foto/4_3_LARGE/atak-drgawek-padaczka-czy-zapalenie-mozgu-1648862.jpg">
+               <img src="https://www.unesale.com/ProductImages/Large/notfound.png">
             {% endif %}
-            
-             </div>
-
-         {%endfor%}
-         <div>
-           size: {{size}} 
-           gender: {{gender}}
-           location:{{location}}
-           age:{{age}}
+            <div>
+           size: {{pet['size']['$t']}} 
+           gender: {{pet['sex']['$t']}}
+           location:{{pet['contact']['city']['$t']}}
+           age:{{pet['age']['$t']}}
          </div>
+         {%endfor%}
+         
     </body>
 </html>
 
