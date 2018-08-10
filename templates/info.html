@@ -2,8 +2,17 @@
 <html>
     <head>
         <title>Dog Adoption App</title>
+                <link rel="stylesheet" href="pets.css">
+
 
     </head>
+    <style>
+    
+#font{
+    font-family: sans-serif;
+}
+
+    </style>
     <body>
         <br>
         <br>
@@ -13,11 +22,19 @@
             {% else %}
                <img src="https://www.unesale.com/ProductImages/Large/notfound.png">
             {% endif %}
-            <div>
-           size: {{pet['size']['$t']}} 
-           gender: {{pet['sex']['$t']}}
-           location:{{pet['contact']['city']['$t']}}
-           age:{{pet['age']['$t']}}
+            <div id="font">
+          
+              
+         
+            Name:{{pet['name']['$t']}}<br> 
+            Size: {{pet['size']['$t']}} <br>
+            Breed:{{pet['breeds']['breed']['$t']}}<br
+            gender:{{pet['sex']['$t']}} <br>
+            Location:{{pet['contact']['city']['$t']}}<br>
+            Email:{{ pet['contact']['email']['$t']}}<br>
+            Age:{{pet['age']['$t']}}<br>
+          
+           
          </div>
          {%endfor%}
          
